@@ -1,0 +1,79 @@
+<app-home [includeBackButton]="true" [includeSearchBar]="false">
+  <div class="container">
+    <form
+      class="text-white"
+      [formGroup]="movieform"
+      (ngSubmit)="addMovie()"
+      id="movieForm"
+    >
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="name"
+          id="name"
+          aria-describedby="nameHelp"
+        />
+        <div id="nameHelp" class="form-text">Enter the name of the movie</div>
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="image"
+          id="image"
+          aria-describedby="imageHelp"
+        />
+        <div id="imageHelp" class="form-text">
+          Enter the image URL of the movie
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="genre" class="form-label">Genre</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="genre"
+          id="genre"
+          aria-describedby="genreHelp"
+        />
+        <div id="genreHelp" class="form-text">Enter the genre of the movie</div>
+      </div>
+      <div class="mb-3">
+        <label for="year" class="form-label">Date</label>
+        <input
+          type="date"
+          class="form-control"
+          formControlName="year"
+          id="year"
+          aria-describedby="yearHelp"
+        />
+        <div id="yearHelp" class="form-text">
+          Enter release date of the movie
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="details" class="form-label">Details</label>
+        <textarea
+          class="form-control"
+          rows="3"
+          formControlName="details"
+          id="details"
+          aria-describedby="detailsHelp"
+        ></textarea>
+        <div id="imageHelp" class="form-text">
+          Enter some details of the movie
+        </div>
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary mb-3"
+        [disabled]="!movieform.valid"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</app-home>

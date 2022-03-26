@@ -1,0 +1,6 @@
+<app-nav
+  [includeSearchBar]="includeSearchBar"
+  [includeBackButton]="includeBackButton"
+  (searchEvent)="handleOnSearchEventReceived($event)"
+></app-nav>
+<ng-content></ng-content>

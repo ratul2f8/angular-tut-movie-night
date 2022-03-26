@@ -1,0 +1,13 @@
+<app-home [includeSearchBar]="false" [includeBackButton]="true">
+  <h4 *ngIf="movie === undefined" class="text-white">Nothing found</h4>
+  <div
+    class="container container-fluid justify-content-center text-white"
+    *ngIf="movie !== undefined"
+  >
+    <img [src]="movie.image + ''" class="rounded mx-auto d-block" />
+    <!-- <h3 style="margin-top: 2em">{{ movie.name }}</h3> -->
+    <h5 style="margin-top: 1em"><b>Genre: </b>{{ movie.genre }}</h5>
+    <h5 style="margin-top: 1em"><b>Year: </b>{{ movie.releaseYear }}</h5>
+    <p [innerText]="movie.details"></p>
+  </div>
+</app-home>
